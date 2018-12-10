@@ -16,10 +16,10 @@ html, body {
 	align-items: center;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(254, 132, 14, 1);
+	background-color: rgba(210, 194, 157, 1);
 	overflow: hidden;
 	touch-action: none;
-	/* -webkit-overflow-scrolling: touch; */
+	-webkit-overflow-scrolling: touch;
 }
 
 #field {
@@ -30,11 +30,11 @@ html, body {
 	width: 100%;
 	height: 100%;
 	background-color: black;
-	overflow: hidden;
-	touch-action: none;
-	-webkit-overflow-scrolling: touch !important;
-	transition: none !important;
-	-webkit-transform: translateZ(0px);
+	/* overflow: hidden; */
+	/* touch-action: none; */
+	/* -webkit-overflow-scrolling: touch !important; */
+	/* transition: none !important; */
+	/* -webkit-transform: translateZ(0px); */
 }
 
 #circle1 {
