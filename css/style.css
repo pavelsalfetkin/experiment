@@ -6,8 +6,8 @@ html, body {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(255, 214, 98, 1);
-	/* overflow: hidden; */
-	touch-action: none;
+	/* overflow: hidden;
+	touch-action: none; */
 }
 
 #container {
@@ -26,32 +26,41 @@ html, body {
 #field {
 	display: flex;
 	position: relative;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
-	height: 100%;
+	/* height: 100%; */
 	background-color: rgba(254, 132, 14, 0.8);
-	overflow: scroll;
+	/* overflow: scroll; */
 	/* touch-action: none; */
 	/* -webkit-overflow-scrolling: touch; */
 	/* transition: none !important; */
 	/* -webkit-transform: translateZ(0px); */
 }
 
-.content {
+.content1,
+.content2,
+.content3,
+.content4 {
 	display: flex;
 	position: relative;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 2000px;
-	background: linear-gradient(to top, #fefcea, #f1da36);
+	height: 300px;
+	/* background-color: red; */
 	/* overflow: hidden; */
 	/* touch-action: none; */
 	/* -webkit-overflow-scrolling: touch; */
 	/* transition: none !important; */
 	/* -webkit-transform: translateZ(0px); */
 }
+
+.content1 { background-color: red; }
+.content2 { background-color: green; }
+.content3 { background-color: blue; }
+.content4 { background-color: orchid; }
 
 #circle1 {
 	position: relative;
