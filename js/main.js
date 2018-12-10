@@ -4,8 +4,6 @@ var section1 = document.getElementById("section1");
 var section2 = document.getElementById("section2");
 var section3 = document.getElementById("section3");
 
-section1.innerHTML = 123;
-
 // var circle1 = document.getElementById("circle1");
 // var circle2 = document.getElementById("circle2");
 // var circle3 = document.getElementById("circle3");
@@ -226,7 +224,6 @@ section3.addEventListener('scroll', function(e) {
 });
 
 section1.addEventListener('click', function(e) {
-	section1.innerHTML = 123;
 	switchToSection2();
 });
 
