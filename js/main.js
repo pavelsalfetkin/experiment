@@ -107,6 +107,7 @@ function startStop() {
 }
 
 field.addEventListener("click", startStop);
+field.addEventListener("touchstart", startStop);
 
 
 // document.addEventListener("touchmove", function(e) { e.preventDefault() });
