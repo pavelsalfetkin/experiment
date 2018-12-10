@@ -31,7 +31,7 @@ html, body {
 	width: 60%;
 	height: 60%;
 	background-color: black;
-	/* overflow: hidden; */
+	overflow: hidden;
 	/* touch-action: none; */
 	/* -webkit-overflow-scrolling: touch !important; */
 	/* transition: none !important; */
