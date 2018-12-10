@@ -32,8 +32,8 @@ html, body {
 	height: 60%;
 	background-color: black;
 	overflow: hidden;
-	touch-action: none;
-	-webkit-overflow-scrolling: touch;
+	/* touch-action: none; */
+	/* -webkit-overflow-scrolling: touch; */
 	/* transition: none !important; */
 	/* -webkit-transform: translateZ(0px); */
 }
