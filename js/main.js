@@ -123,10 +123,10 @@ var section3 = document.getElementById("section3");
 
 
 
-document.addEventListener("touchmove", function(e) {
-	console.log("document.touchmove");
-	e.preventDefault();
-}, false);
+// document.addEventListener("touchmove", function(e) {
+// 	console.log("document.touchmove");
+// 	e.preventDefault();
+// }, false);
 
 
 
