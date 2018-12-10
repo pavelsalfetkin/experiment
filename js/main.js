@@ -187,31 +187,31 @@ function swipeFromSection3 (event) {
 // section2.addEventListener('touchstart', swipeFromSection2, false);
 // section3.addEventListener('touchstart', swipeFromSection3, false);
 
-section1.addEventListener('wheel', function(e) {
-	if (e.deltaY > 10) switchToSection2();
-});
+// section1.addEventListener('wheel', function(e) {
+// 	if (e.deltaY > 10) switchToSection2();
+// });
 
-section2.addEventListener('wheel', function(e) {
-	if (e.deltaY < -10) switchToSection1();
-	else if (e.deltaY > 10) switchToSection3();
-});
+// section2.addEventListener('wheel', function(e) {
+// 	if (e.deltaY < -10) switchToSection1();
+// 	else if (e.deltaY > 10) switchToSection3();
+// });
 
-section3.addEventListener('wheel', function(e) {
-	if (e.deltaY < -10) switchToSection2();
-});
+// section3.addEventListener('wheel', function(e) {
+// 	if (e.deltaY < -10) switchToSection2();
+// });
 
-section1.addEventListener('scroll', function(e) {
-	if (e.deltaY > 10) switchToSection2();
-});
+// section1.addEventListener('scroll', function(e) {
+// 	if (e.deltaY > 10) switchToSection2();
+// });
 
-section2.addEventListener('scroll', function(e) {
-	if (e.deltaY < -10) switchToSection1();
-	else if (e.deltaY > 10) switchToSection3();
-});
+// section2.addEventListener('scroll', function(e) {
+// 	if (e.deltaY < -10) switchToSection1();
+// 	else if (e.deltaY > 10) switchToSection3();
+// });
 
-section3.addEventListener('scroll', function(e) {
-	if (e.deltaY < -10) switchToSection2();
-});
+// section3.addEventListener('scroll', function(e) {
+// 	if (e.deltaY < -10) switchToSection2();
+// });
 
 
 document.addEventListener("touchmove", function(e) {
