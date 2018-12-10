@@ -120,7 +120,7 @@ field.addEventListener("click", startStop);
 
 
 
-document.addEventListener("touchmove", function(e){
+window.addEventListener("touchmove", function(e){
 	console.log("document.touchmove");
 	e.preventDefault();
 }, false);
