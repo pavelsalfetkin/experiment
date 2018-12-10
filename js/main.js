@@ -1,3 +1,4 @@
+var container = document.getElementById("container");
 // var field = document.getElementById("field");
 // var circle1 = document.getElementById("circle1");
 // var circle2 = document.getElementById("circle2");
@@ -114,9 +115,14 @@
 
 
 // document.addEventListener("DOMContentLoaded", ready, false);
-document.addEventListener("touchmove", function(evt){
+document.addEventListener("touchmove", function(e){
 	console.log("document.touchmove");
-	evt.preventDefault();
+	e.preventDefault();
+}, false);
+
+container.addEventListener("touchmove", function(e){
+	console.log("document.touchmove");
+	e.preventDefault();
 }, false);
 
 // function ready(){
