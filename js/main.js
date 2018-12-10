@@ -224,6 +224,7 @@ section3.addEventListener('scroll', function(e) {
 });
 
 section1.addEventListener('click', function(e) {
+	section1.innerHTML = 123;
 	switchToSection2();
 });
 
