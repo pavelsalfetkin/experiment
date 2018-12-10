@@ -156,7 +156,7 @@ function swipeFromSection1 (event) {
 	this.addEventListener('touchmove', function(event) {
 		this.endPoint = event.targetTouches[0].clientY;
 		if (this.startPoint > this.endPoint) switchToSection2();
-	});
+	}, false);
 	// this.addEventListener('touchend', function() {
 	// 	if (this.startPoint > this.endPoint) switchToSection2();
 	// });
@@ -171,7 +171,7 @@ function swipeFromSection2 (event) {
 		this.endPoint = event.targetTouches[0].clientY;
 		if (this.startPoint > this.endPoint) switchToSection3();
 		else switchToSection1();
-	});
+	}, false);
 	// this.addEventListener('touchend', function() {
 	// 	if (this.startPoint > this.endPoint) switchToSection3();
 	// 	else switchToSection1();
@@ -186,7 +186,7 @@ function swipeFromSection3 (event) {
 	this.addEventListener('touchmove', function(event) {
 		this.endPoint = event.targetTouches[0].clientY;
 		if (this.startPoint < this.endPoint) switchToSection2();
-	});
+	}, false);
 	// this.addEventListener('touchend', function() {
 	// 	if (this.startPoint < this.endPoint) switchToSection2();
 	// });
