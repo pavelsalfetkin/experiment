@@ -124,20 +124,20 @@ var section3 = document.getElementById("section3");
 
 
 
-const switchToSection1 = () => {
-	container.style.transform = 'translate3d(0px, 0px, 0px)';
-	container.style.transition = 'all 700ms ease 0s';
-};
+// const switchToSection1 = () => {
+// 	container.style.transform = 'translate3d(0px, 0px, 0px)';
+// 	container.style.transition = 'all 700ms ease 0s';
+// };
 
-const switchToSection2 = () => {
-		container.style.transform = 'translate3d(0px, -100%, 0px)';
-		container.style.transition = 'all 700ms ease 0s';
-};
+// const switchToSection2 = () => {
+// 		container.style.transform = 'translate3d(0px, -100%, 0px)';
+// 		container.style.transition = 'all 700ms ease 0s';
+// };
 
-const switchToSection3 = () => {
-		container.style.transform = 'translate3d(0px, -200%, 0px)';
-		container.style.transition = 'all 700ms ease 0s';
-};
+// const switchToSection3 = () => {
+// 		container.style.transform = 'translate3d(0px, -200%, 0px)';
+// 		container.style.transition = 'all 700ms ease 0s';
+// };
 
 
 
