@@ -16,7 +16,7 @@ html, body {
 	height: 100%;
 	touch-action: none;
 	background-color: rgba(210, 194, 157, 1);
-	overflow: auto;
+	/* overflow: auto; */
 	/* touch-action: none; */
 	/* -webkit-overflow-scrolling: touch; */
 }
