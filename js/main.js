@@ -108,7 +108,24 @@ function startStop() {
 field.addEventListener("click", startStop);
 
 
-document.addEventListener("touchmove", function(e) { e.preventDefault() });
-window.addEventListener('touchmove', function(e) { e.preventDefault() });
-window.addEventListener("load", function() { window. scrollTo(0, 0) });
+// document.addEventListener("touchmove", function(e) { e.preventDefault() });
+// window.addEventListener('touchmove', function(e) { e.preventDefault() });
+// window.addEventListener("load", function() { window. scrollTo(0, 0) });
 
+
+// document.addEventListener("DOMContentLoaded", ready, false);
+document.addEventListener("touchmove", function(evt){
+	console.log("document.touchmove");
+	evt.preventDefault();
+}, false);
+
+// function ready(){
+// 	var container = document.getElementsByClassName("scollpane")[0];
+// 	var subcontainer = container.children[0];
+// 	var subsubcontainer = container.children[0].children[0];
+// 	container.addEventListener("touchmove", function(evt){
+// 		if(subsubcontainer.getBoundingClientRect().height > subcontainer.getBoundingClientRect().height){
+// 			evt.stopPropagation();
+// 		}
+// 	}, false);
+// }
