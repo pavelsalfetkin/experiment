@@ -223,6 +223,18 @@ section3.addEventListener('scroll', function(e) {
 	if (e.deltaY < -10) switchToSection2();
 });
 
+section1.addEventListener('click', function(e) {
+	switchToSection2();
+});
+
+section2.addEventListener('click', function(e) {
+	switchToSection3();
+});
+
+section3.addEventListener('click', function(e) {
+	switchToSection1();
+});
+
 
 
 
