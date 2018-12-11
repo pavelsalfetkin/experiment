@@ -25,12 +25,6 @@
     </div>
     
     <script>
-      document.addEventListener("touchmove", function(e) {
-        console.log("document.touchmove");
-        e.preventDefault();
-      }, true);
-
-
       "use strict";
 
       var container = document.getElementById("container");
@@ -59,7 +53,7 @@
         // switchToSection2();
         this.startPoint = event.targetTouches[0].clientY;
         this.endPoint;
-        this.addEventListener('touchmove', function (event) {
+        section1.addEventListener('touchmove', function (event) {
           this.endPoint = event.targetTouches[0].clientY;
           if (this.startPoint > this.endPoint) switchToSection2();
         }, false);
@@ -73,7 +67,7 @@
         // switchToSection3();
         this.startPoint = event.targetTouches[0].clientY;
         this.endPoint;
-        this.addEventListener('touchmove', function (event) {
+        section2.addEventListener('touchmove', function (event) {
           this.endPoint = event.targetTouches[0].clientY;
           if (this.startPoint > this.endPoint) switchToSection3();else switchToSection1();
         }, false);
@@ -88,7 +82,7 @@
         // switchToSection1();
         this.startPoint = event.targetTouches[0].clientY;
         this.endPoint;
-        this.addEventListener('touchmove', function (event) {
+        section3.addEventListener('touchmove', function (event) {
           this.endPoint = event.targetTouches[0].clientY;
           if (this.startPoint < this.endPoint) switchToSection2();
         }, false);
@@ -125,6 +119,12 @@
       //   if (e.deltaY < -10) switchToSection2();
       // });
 
+      window.addEventListener("touchmove", function(e) {
+        console.log("document.touchmove");
+        e.preventDefault();
+      }, false);
+
+      section1.innerHTML = Math.round(Math.random() * 10000);
 
     </script>
     
