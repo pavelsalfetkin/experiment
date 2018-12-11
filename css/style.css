@@ -13,8 +13,8 @@ html, body {
 	height: 100%;
 	background-color: rgba(210, 194, 157, 1);
 	/* overflow: hidden; */
-	/* touch-action: none; */
-	/* -webkit-overflow-scrolling: touch; */
+	touch-action: none;
+	-webkit-overflow-scrolling: touch;
 }
 
 #section1,
