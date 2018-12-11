@@ -13,7 +13,7 @@ html, body {
 	height: 100%;
 	background-color: rgba(210, 194, 157, 1);
 	/* overflow: hidden; */
-	touch-action: none;
+	/* touch-action: none; */
 	/* -webkit-overflow-scrolling: touch; */
 }
 
@@ -30,7 +30,7 @@ html, body {
 	font-weight: 700;
 	font-size: 64px;
 	color: white;
-	touch-action: none;
+	/* touch-action: none; */
 }
 
 #section1 { background-color: #DD4132; }
