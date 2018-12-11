@@ -150,7 +150,7 @@ const switchToSection3 = () => {
 
 function swipeFromSection1 (event) {
 	console.log(`event.target`, event.target);
-	switchToSection2()
+	// switchToSection2();
 	this.startPoint = event.targetTouches[0].clientY;
 	this.endPoint;
 	this.addEventListener('touchmove', function(event) {
@@ -164,7 +164,7 @@ function swipeFromSection1 (event) {
 
 function swipeFromSection2 (event) {
 	console.log(`event.target`, event.target);
-	switchToSection3()
+	// switchToSection3();
 	this.startPoint = event.targetTouches[0].clientY;
 	this.endPoint;
 	this.addEventListener('touchmove', function(event) {
@@ -180,7 +180,7 @@ function swipeFromSection2 (event) {
 
 function swipeFromSection3 (event) {
 	console.log(`event.target`, event.target);
-	switchToSection1()
+	// switchToSection1();
 	this.startPoint = event.targetTouches[0].clientY;
 	this.endPoint;
 	this.addEventListener('touchmove', function(event) {
@@ -222,21 +222,6 @@ section2.addEventListener('scroll', function(e) {
 section3.addEventListener('scroll', function(e) {
 	if (e.deltaY < -10) switchToSection2();
 });
-
-section1.addEventListener('click', function(e) {
-	switchToSection2();
-});
-
-section2.addEventListener('click', function(e) {
-	switchToSection3();
-});
-
-section3.addEventListener('click', function(e) {
-	switchToSection1();
-});
-
-
-
 
 
 
