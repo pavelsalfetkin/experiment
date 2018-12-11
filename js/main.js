@@ -1,3 +1,5 @@
+"use strict";
+
 var container = document.getElementById("container");
 
 var section1 = document.getElementById("section1");
@@ -49,15 +51,12 @@ var section3 = document.getElementById("section3");
 // 		circle4.style.transform = `rotate(${(180 * progress).toFixed(2)}deg)`;
 
 
-
-
-
 // 		// circle.forEach(element => { element.style.borderColor = `rgb(100, ${(g * progress).toFixed(2)}, 100)` });
 
 // 		// circle.style.left = `${(dist * progress).toFixed(2)}px`;
 // 		// circle.style.transform = `rotate(${(rotate * progress).toFixed(2)}deg)`;
 // 		// circle.style.backgroundColor = `rgb(100, ${(g * progress).toFixed(2)}, 100)`;
-		
+
 // 		// console.log(`circle.style.left`, circle.style.left);
 // 		// console.log(`circle.style.transform`, circle.style.transform );
 
@@ -122,38 +121,33 @@ var section3 = document.getElementById("section3");
 // document.addEventListener("DOMContentLoaded", ready, false);
 
 
-
 // document.addEventListener("touchmove", function(e) {
 // 	console.log("document.touchmove");
 // 	e.preventDefault();
 // }, false);
 
 
-
-
-const switchToSection1 = () => {
+var switchToSection1 = function switchToSection1() {
 	container.style.transform = 'translate3d(0px, 0px, 0px)';
 	container.style.transition = 'all 700ms ease 0s';
 };
 
-const switchToSection2 = () => {
-		container.style.transform = 'translate3d(0px, -100%, 0px)';
-		container.style.transition = 'all 700ms ease 0s';
+var switchToSection2 = function switchToSection2() {
+	container.style.transform = 'translate3d(0px, -100%, 0px)';
+	container.style.transition = 'all 700ms ease 0s';
 };
 
-const switchToSection3 = () => {
-		container.style.transform = 'translate3d(0px, -200%, 0px)';
-		container.style.transition = 'all 700ms ease 0s';
+var switchToSection3 = function switchToSection3() {
+	container.style.transform = 'translate3d(0px, -200%, 0px)';
+	container.style.transition = 'all 700ms ease 0s';
 };
 
-
-
-function swipeFromSection1 (event) {
-	console.log(`event.target`, event.target);
+function swipeFromSection1(event) {
+	console.log("event.target", event.target);
 	// switchToSection2();
 	this.startPoint = event.targetTouches[0].clientY;
 	this.endPoint;
-	this.addEventListener('touchmove', function(event) {
+	this.addEventListener('touchmove', function (event) {
 		this.endPoint = event.targetTouches[0].clientY;
 		if (this.startPoint > this.endPoint) switchToSection2();
 	}, false);
@@ -162,15 +156,14 @@ function swipeFromSection1 (event) {
 	// });
 }
 
-function swipeFromSection2 (event) {
-	console.log(`event.target`, event.target);
+function swipeFromSection2(event) {
+	console.log("event.target", event.target);
 	// switchToSection3();
 	this.startPoint = event.targetTouches[0].clientY;
 	this.endPoint;
-	this.addEventListener('touchmove', function(event) {
+	this.addEventListener('touchmove', function (event) {
 		this.endPoint = event.targetTouches[0].clientY;
-		if (this.startPoint > this.endPoint) switchToSection3();
-		else switchToSection1();
+		if (this.startPoint > this.endPoint) switchToSection3();else switchToSection1();
 	}, false);
 	// this.addEventListener('touchend', function() {
 	// 	if (this.startPoint > this.endPoint) switchToSection3();
@@ -178,12 +171,12 @@ function swipeFromSection2 (event) {
 	// });	
 }
 
-function swipeFromSection3 (event) {
-	console.log(`event.target`, event.target);
+function swipeFromSection3(event) {
+	console.log("event.target", event.target);
 	// switchToSection1();
 	this.startPoint = event.targetTouches[0].clientY;
 	this.endPoint;
-	this.addEventListener('touchmove', function(event) {
+	this.addEventListener('touchmove', function (event) {
 		this.endPoint = event.targetTouches[0].clientY;
 		if (this.startPoint < this.endPoint) switchToSection2();
 	}, false);
@@ -192,45 +185,41 @@ function swipeFromSection3 (event) {
 	// });
 }
 
-
 section1.addEventListener('touchstart', swipeFromSection1, false);
 section2.addEventListener('touchstart', swipeFromSection2, false);
 section3.addEventListener('touchstart', swipeFromSection3, false);
 
-section1.addEventListener('wheel', function(e) {
-	if (e.deltaY > 10) switchToSection2();
-});
+// section1.addEventListener('wheel', function(e) {
+// 	if (e.deltaY > 10) switchToSection2();
+// });
 
-section2.addEventListener('wheel', function(e) {
-	if (e.deltaY < -10) switchToSection1();
-	else if (e.deltaY > 10) switchToSection3();
-});
+// section2.addEventListener('wheel', function(e) {
+// 	if (e.deltaY < -10) switchToSection1();
+// 	else if (e.deltaY > 10) switchToSection3();
+// });
 
-section3.addEventListener('wheel', function(e) {
-	if (e.deltaY < -10) switchToSection2();
-});
+// section3.addEventListener('wheel', function(e) {
+// 	if (e.deltaY < -10) switchToSection2();
+// });
 
-section1.addEventListener('scroll', function(e) {
-	if (e.deltaY > 10) switchToSection2();
-});
+// section1.addEventListener('scroll', function(e) {
+// 	if (e.deltaY > 10) switchToSection2();
+// });
 
-section2.addEventListener('scroll', function(e) {
-	if (e.deltaY < -10) switchToSection1();
-	else if (e.deltaY > 10) switchToSection3();
-});
+// section2.addEventListener('scroll', function(e) {
+// 	if (e.deltaY < -10) switchToSection1();
+// 	else if (e.deltaY > 10) switchToSection3();
+// });
 
-section3.addEventListener('scroll', function(e) {
-	if (e.deltaY < -10) switchToSection2();
-});
-
-
+// section3.addEventListener('scroll', function(e) {
+// 	if (e.deltaY < -10) switchToSection2();
+// });
 
 
-
-// container.addEventListener("touchmove", function(e){
-// 	console.log("document.touchmove");
-// 	e.preventDefault();
-// }, false);
+container.addEventListener("touchmove", function (e) {
+	console.log("document.touchmove");
+	e.preventDefault();
+}, false);
 
 // function ready(){
 // 	var container = document.getElementsByClassName("scollpane")[0];
