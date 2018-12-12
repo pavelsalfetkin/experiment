@@ -26,10 +26,23 @@
 
     <script>
       "use strict";
+      var container = document.getElementById("container");
+      var section1 = document.getElementById("section1");
+
       document.addEventListener("touchstart", function(e) { e.preventDefault() }, false);
       document.addEventListener("touchend", function(e) { e.preventDefault() }, false);
       document.addEventListener("touchcancel", function(e) { e.preventDefault() }, false);
       document.addEventListener("touchmove", function(e) { e.preventDefault() }, false);
+
+      container.addEventListener("touchstart", function(e) { e.preventDefault() }, false);
+      container.addEventListener("touchend", function(e) { e.preventDefault() }, false);
+      container.addEventListener("touchcancel", function(e) { e.preventDefault() }, false);
+      container.addEventListener("touchmove", function(e) { e.preventDefault() }, false);
+
+      section1.addEventListener("touchstart", function(e) { e.preventDefault() }, false);
+      section1.addEventListener("touchend", function(e) { e.preventDefault() }, false);
+      section1.addEventListener("touchcancel", function(e) { e.preventDefault() }, false);
+      section1.addEventListener("touchmove", function(e) { e.preventDefault() }, false);
     </script>
     
     <!-- <script type="text/javascript" src="js/main.js"></script> -->

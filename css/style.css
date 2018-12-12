@@ -16,7 +16,7 @@ html, body {
 	/* height: 100vh; */
 	background-color: rgba(210, 194, 157, 1);
 	touch-action: none;
-	-webkit-overflow-scrolling: touch;
+	/* -webkit-overflow-scrolling: touch; */
 }
 
 #section1,
