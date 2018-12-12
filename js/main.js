@@ -6,6 +6,8 @@ var section1 = document.getElementById("section1");
 var section2 = document.getElementById("section2");
 var section3 = document.getElementById("section3");
 
+section1.innerHTML = Math.round(Math.random() * 10000);
+
 // var circle1 = document.getElementById("circle1");
 // var circle2 = document.getElementById("circle2");
 // var circle3 = document.getElementById("circle3");
@@ -121,73 +123,73 @@ var section3 = document.getElementById("section3");
 // document.addEventListener("DOMContentLoaded", ready, false);
 
 
-// document.addEventListener("touchmove", function(e) {
-// 	console.log("document.touchmove");
-// 	e.preventDefault();
-// }, false);
+document.addEventListener("touchmove", function(e) { e.preventDefault() }, false);
+document.addEventListener("touchmove", function(e) { e.preventDefault() }, false);
+document.addEventListener("touchmove", function(e) { e.preventDefault() }, false);
+document.addEventListener("touchmove", function(e) { e.preventDefault() }, false);
 
 
-var switchToSection1 = function switchToSection1() {
-	container.style.transform = 'translate3d(0px, 0px, 0px)';
-	container.style.transition = 'all 700ms ease 0s';
-};
+// var switchToSection1 = function switchToSection1() {
+// 	container.style.transform = 'translate3d(0px, 0px, 0px)';
+// 	container.style.transition = 'all 700ms ease 0s';
+// };
 
-var switchToSection2 = function switchToSection2() {
-	container.style.transform = 'translate3d(0px, -100%, 0px)';
-	container.style.transition = 'all 700ms ease 0s';
-};
+// var switchToSection2 = function switchToSection2() {
+// 	container.style.transform = 'translate3d(0px, -100%, 0px)';
+// 	container.style.transition = 'all 700ms ease 0s';
+// };
 
-var switchToSection3 = function switchToSection3() {
-	container.style.transform = 'translate3d(0px, -200%, 0px)';
-	container.style.transition = 'all 700ms ease 0s';
-};
+// var switchToSection3 = function switchToSection3() {
+// 	container.style.transform = 'translate3d(0px, -200%, 0px)';
+// 	container.style.transition = 'all 700ms ease 0s';
+// };
 
-function swipeFromSection1(event) {
-	console.log("event.target", event.target);
-	// switchToSection2();
-	this.startPoint = event.targetTouches[0].clientY;
-	this.endPoint;
-	this.addEventListener('touchmove', function (event) {
-		this.endPoint = event.targetTouches[0].clientY;
-		if (this.startPoint > this.endPoint) switchToSection2();
-	}, false);
-	// this.addEventListener('touchend', function() {
-	// 	if (this.startPoint > this.endPoint) switchToSection2();
-	// });
-}
+// function swipeFromSection1(event) {
+// 	console.log("event.target", event.target);
+// 	// switchToSection2();
+// 	this.startPoint = event.targetTouches[0].clientY;
+// 	this.endPoint;
+// 	this.addEventListener('touchmove', function (event) {
+// 		this.endPoint = event.targetTouches[0].clientY;
+// 		if (this.startPoint > this.endPoint) switchToSection2();
+// 	}, false);
+// 	// this.addEventListener('touchend', function() {
+// 	// 	if (this.startPoint > this.endPoint) switchToSection2();
+// 	// });
+// }
 
-function swipeFromSection2(event) {
-	console.log("event.target", event.target);
-	// switchToSection3();
-	this.startPoint = event.targetTouches[0].clientY;
-	this.endPoint;
-	this.addEventListener('touchmove', function (event) {
-		this.endPoint = event.targetTouches[0].clientY;
-		if (this.startPoint > this.endPoint) switchToSection3();else switchToSection1();
-	}, false);
-	// this.addEventListener('touchend', function() {
-	// 	if (this.startPoint > this.endPoint) switchToSection3();
-	// 	else switchToSection1();
-	// });	
-}
+// function swipeFromSection2(event) {
+// 	console.log("event.target", event.target);
+// 	// switchToSection3();
+// 	this.startPoint = event.targetTouches[0].clientY;
+// 	this.endPoint;
+// 	this.addEventListener('touchmove', function (event) {
+// 		this.endPoint = event.targetTouches[0].clientY;
+// 		if (this.startPoint > this.endPoint) switchToSection3();else switchToSection1();
+// 	}, false);
+// 	// this.addEventListener('touchend', function() {
+// 	// 	if (this.startPoint > this.endPoint) switchToSection3();
+// 	// 	else switchToSection1();
+// 	// });	
+// }
 
-function swipeFromSection3(event) {
-	console.log("event.target", event.target);
-	// switchToSection1();
-	this.startPoint = event.targetTouches[0].clientY;
-	this.endPoint;
-	this.addEventListener('touchmove', function (event) {
-		this.endPoint = event.targetTouches[0].clientY;
-		if (this.startPoint < this.endPoint) switchToSection2();
-	}, false);
-	// this.addEventListener('touchend', function() {
-	// 	if (this.startPoint < this.endPoint) switchToSection2();
-	// });
-}
+// function swipeFromSection3(event) {
+// 	console.log("event.target", event.target);
+// 	// switchToSection1();
+// 	this.startPoint = event.targetTouches[0].clientY;
+// 	this.endPoint;
+// 	this.addEventListener('touchmove', function (event) {
+// 		this.endPoint = event.targetTouches[0].clientY;
+// 		if (this.startPoint < this.endPoint) switchToSection2();
+// 	}, false);
+// 	// this.addEventListener('touchend', function() {
+// 	// 	if (this.startPoint < this.endPoint) switchToSection2();
+// 	// });
+// }
 
-section1.addEventListener('touchstart', swipeFromSection1, false);
-section2.addEventListener('touchstart', swipeFromSection2, false);
-section3.addEventListener('touchstart', swipeFromSection3, false);
+// section1.addEventListener('touchstart', swipeFromSection1, false);
+// section2.addEventListener('touchstart', swipeFromSection2, false);
+// section3.addEventListener('touchstart', swipeFromSection3, false);
 
 // section1.addEventListener('wheel', function(e) {
 // 	if (e.deltaY > 10) switchToSection2();
@@ -216,10 +218,34 @@ section3.addEventListener('touchstart', swipeFromSection3, false);
 // });
 
 
-container.addEventListener("touchmove", function (e) {
-	console.log("document.touchmove");
-	e.preventDefault();
-}, false);
+
+// window.addEventListener("click", function (e) {
+// 	console.log("window.click", e.target, e.currentTarget, this.dataset);
+// 	// e.stopPropagation(); // прекращение всплытия или погружения события
+// 	// e.preventDefault(); // отмена стандартного поведения
+// }, false);
+
+// document.addEventListener("click", function (e) {
+// 	console.log("document.click", e.target, e.currentTarget, this.dataset);
+// 	// e.stopPropagation(); // прекращение всплытия или погружения события
+// 	// e.preventDefault(); // отмена стандартного поведения
+// }, false);
+
+// container.addEventListener("click", function (e) {
+// 	console.log("container.click", e.target, e.currentTarget, this.dataset);
+// 	// e.stopPropagation(); // прекращение всплытия или погружения события
+// 	// e.preventDefault(); // отмена стандартного поведения
+// }, false);
+
+// section1.addEventListener("click", function (e) {
+// 	console.log("section1.click", e.target, e.currentTarget, this.dataset);
+// 	// e.stopPropagation(); // прекращение всплытия или погружения события
+// 	// e.preventDefault(); // отмена стандартного поведения
+// }, false);
+
+
+
+
 
 // function ready(){
 // 	var container = document.getElementsByClassName("scollpane")[0];
