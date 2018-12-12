@@ -1,7 +1,6 @@
 "use strict";
 
 var container = document.getElementById("container");
-
 var section1 = document.getElementById("section1");
 var section2 = document.getElementById("section2");
 var section3 = document.getElementById("section3");
@@ -123,73 +122,77 @@ section1.innerHTML = Math.round(Math.random() * 10000);
 // document.addEventListener("DOMContentLoaded", ready, false);
 
 
+document.addEventListener("touchstart", function(e) { e.preventDefault() }, false);
+document.addEventListener("touchend", function(e) { e.preventDefault() }, false);
+document.addEventListener("touchcancel", function(e) { e.preventDefault() }, false);
 document.addEventListener("touchmove", function(e) { e.preventDefault() }, false);
-document.addEventListener("touchmove", function(e) { e.preventDefault() }, false);
-document.addEventListener("touchmove", function(e) { e.preventDefault() }, false);
-document.addEventListener("touchmove", function(e) { e.preventDefault() }, false);
 
 
-// var switchToSection1 = function switchToSection1() {
-// 	container.style.transform = 'translate3d(0px, 0px, 0px)';
-// 	container.style.transition = 'all 700ms ease 0s';
-// };
+var switchToSection1 = function switchToSection1() {
+	container.style.transform = 'translate3d(0px, 0px, 0px)';
+	container.style.transition = 'all 700ms ease 0s';
+};
 
-// var switchToSection2 = function switchToSection2() {
-// 	container.style.transform = 'translate3d(0px, -100%, 0px)';
-// 	container.style.transition = 'all 700ms ease 0s';
-// };
+var switchToSection2 = function switchToSection2() {
+	container.style.transform = 'translate3d(0px, -100%, 0px)';
+	container.style.transition = 'all 700ms ease 0s';
+};
 
-// var switchToSection3 = function switchToSection3() {
-// 	container.style.transform = 'translate3d(0px, -200%, 0px)';
-// 	container.style.transition = 'all 700ms ease 0s';
-// };
+var switchToSection3 = function switchToSection3() {
+	container.style.transform = 'translate3d(0px, -200%, 0px)';
+	container.style.transition = 'all 700ms ease 0s';
+};
 
-// function swipeFromSection1(event) {
-// 	console.log("event.target", event.target);
-// 	// switchToSection2();
-// 	this.startPoint = event.targetTouches[0].clientY;
-// 	this.endPoint;
-// 	this.addEventListener('touchmove', function (event) {
-// 		this.endPoint = event.targetTouches[0].clientY;
-// 		if (this.startPoint > this.endPoint) switchToSection2();
-// 	}, false);
-// 	// this.addEventListener('touchend', function() {
-// 	// 	if (this.startPoint > this.endPoint) switchToSection2();
-// 	// });
-// }
+function swipeFromSection1(e) {
+	e.preventDefault();
+	console.log("event.target", e.target);
+	this.startPoint = e.targetTouches[0].clientY;
+	this.endPoint;
 
-// function swipeFromSection2(event) {
-// 	console.log("event.target", event.target);
-// 	// switchToSection3();
-// 	this.startPoint = event.targetTouches[0].clientY;
-// 	this.endPoint;
-// 	this.addEventListener('touchmove', function (event) {
-// 		this.endPoint = event.targetTouches[0].clientY;
-// 		if (this.startPoint > this.endPoint) switchToSection3();else switchToSection1();
-// 	}, false);
-// 	// this.addEventListener('touchend', function() {
-// 	// 	if (this.startPoint > this.endPoint) switchToSection3();
-// 	// 	else switchToSection1();
-// 	// });	
-// }
+	this.addEventListener('touchmove', function (e) {
+		e.preventDefault();
+		this.endPoint = e.targetTouches[0].clientY;
+		if (this.startPoint > this.endPoint) switchToSection2();
+	}, false);
 
-// function swipeFromSection3(event) {
-// 	console.log("event.target", event.target);
-// 	// switchToSection1();
-// 	this.startPoint = event.targetTouches[0].clientY;
-// 	this.endPoint;
-// 	this.addEventListener('touchmove', function (event) {
-// 		this.endPoint = event.targetTouches[0].clientY;
-// 		if (this.startPoint < this.endPoint) switchToSection2();
-// 	}, false);
-// 	// this.addEventListener('touchend', function() {
-// 	// 	if (this.startPoint < this.endPoint) switchToSection2();
-// 	// });
-// }
+	this.addEventListener('touchend', function() { e.preventDefault() });
+	this.addEventListener('touchcancel', function() { e.preventDefault() });
+}
 
-// section1.addEventListener('touchstart', swipeFromSection1, false);
-// section2.addEventListener('touchstart', swipeFromSection2, false);
-// section3.addEventListener('touchstart', swipeFromSection3, false);
+function swipeFromSection2(e) {
+	e.preventDefault();
+	console.log("event.target", e.target);
+	this.startPoint = e.targetTouches[0].clientY;
+	this.endPoint;
+
+	this.addEventListener('touchmove', function (e) {
+		this.endPoint = e.targetTouches[0].clientY;
+		if (this.startPoint > this.endPoint) switchToSection3();
+		else switchToSection1();
+	}, false);
+
+	this.addEventListener('touchend', function() { e.preventDefault() });
+	this.addEventListener('touchcancel', function() { e.preventDefault() });
+}
+
+function swipeFromSection3(e) {
+	e.preventDefault();
+	console.log("event.target", e.target);
+	this.startPoint = e.targetTouches[0].clientY;
+	this.endPoint;
+
+	this.addEventListener('touchmove', function (e) {
+		this.endPoint = e.targetTouches[0].clientY;
+		if (this.startPoint < this.endPoint) switchToSection2();
+	}, false);
+
+	this.addEventListener('touchend', function() { e.preventDefault() });
+	this.addEventListener('touchcancel', function() { e.preventDefault() });
+}
+
+section1.addEventListener('touchstart', swipeFromSection1, false);
+section2.addEventListener('touchstart', swipeFromSection2, false);
+section3.addEventListener('touchstart', swipeFromSection3, false);
 
 // section1.addEventListener('wheel', function(e) {
 // 	if (e.deltaY > 10) switchToSection2();
@@ -247,13 +250,3 @@ document.addEventListener("touchmove", function(e) { e.preventDefault() }, false
 
 
 
-// function ready(){
-// 	var container = document.getElementsByClassName("scollpane")[0];
-// 	var subcontainer = container.children[0];
-// 	var subsubcontainer = container.children[0].children[0];
-// 	container.addEventListener("touchmove", function(evt){
-// 		if(subsubcontainer.getBoundingClientRect().height > subcontainer.getBoundingClientRect().height){
-// 			evt.stopPropagation();
-// 		}
-// 	}, false);
-// }

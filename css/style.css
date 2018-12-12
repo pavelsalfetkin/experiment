@@ -16,7 +16,6 @@ html, body {
 	/* height: 100vh; */
 	background-color: rgba(210, 194, 157, 1);
 	touch-action: none;
-	/* -webkit-overflow-scrolling: touch; */
 }
 
 #section1,
@@ -34,7 +33,6 @@ html, body {
 	font-weight: 700;
 	font-size: 64px;
 	color: white;
-	/* touch-action: none; */
 }
 
 #section1 { background-color: #DD4132; }
