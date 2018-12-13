@@ -5,7 +5,7 @@ var section1 = document.getElementById("section1");
 var section2 = document.getElementById("section2");
 var section3 = document.getElementById("section3");
 
-section1.innerHTML = Math.round(Math.random() * 10000);
+// section1.innerHTML = Math.round(Math.random() * 10000);
 
 // var circle1 = document.getElementById("circle1");
 // var circle2 = document.getElementById("circle2");
@@ -122,12 +122,6 @@ section1.innerHTML = Math.round(Math.random() * 10000);
 // document.addEventListener("DOMContentLoaded", ready, false);
 
 
-document.addEventListener("touchstart", function(e) { e.preventDefault() }, false);
-document.addEventListener("touchend", function(e) { e.preventDefault() }, false);
-document.addEventListener("touchcancel", function(e) { e.preventDefault() }, false);
-document.addEventListener("touchmove", function(e) { e.preventDefault() }, false);
-
-
 var switchToSection1 = function switchToSection1() {
 	container.style.transform = 'translate3d(0px, 0px, 0px)';
 	container.style.transition = 'all 700ms ease 0s';
@@ -194,59 +188,40 @@ section1.addEventListener('touchstart', swipeFromSection1, false);
 section2.addEventListener('touchstart', swipeFromSection2, false);
 section3.addEventListener('touchstart', swipeFromSection3, false);
 
-// section1.addEventListener('wheel', function(e) {
-// 	if (e.deltaY > 10) switchToSection2();
-// });
+section1.addEventListener('wheel', function(e) {
+	e.preventDefault();
+	if (e.deltaY > 10) switchToSection2();
+});
 
-// section2.addEventListener('wheel', function(e) {
-// 	if (e.deltaY < -10) switchToSection1();
-// 	else if (e.deltaY > 10) switchToSection3();
-// });
+section2.addEventListener('wheel', function(e) {
+	e.preventDefault();
+	if (e.deltaY < -10) switchToSection1();
+	else if (e.deltaY > 10) switchToSection3();
+});
 
-// section3.addEventListener('wheel', function(e) {
-// 	if (e.deltaY < -10) switchToSection2();
-// });
+section3.addEventListener('wheel', function(e) {
+	e.preventDefault();
+	if (e.deltaY < -10) switchToSection2();
+});
 
-// section1.addEventListener('scroll', function(e) {
-// 	if (e.deltaY > 10) switchToSection2();
-// });
+section1.addEventListener('scroll', function(e) {
+	e.preventDefault();
+	if (e.deltaY > 10) switchToSection2();
+});
 
-// section2.addEventListener('scroll', function(e) {
-// 	if (e.deltaY < -10) switchToSection1();
-// 	else if (e.deltaY > 10) switchToSection3();
-// });
+section2.addEventListener('scroll', function(e) {
+	e.preventDefault();
+	if (e.deltaY < -10) switchToSection1();
+	else if (e.deltaY > 10) switchToSection3();
+});
 
-// section3.addEventListener('scroll', function(e) {
-// 	if (e.deltaY < -10) switchToSection2();
-// });
-
-
-
-// window.addEventListener("click", function (e) {
-// 	console.log("window.click", e.target, e.currentTarget, this.dataset);
-// 	// e.stopPropagation(); // прекращение всплытия или погружения события
-// 	// e.preventDefault(); // отмена стандартного поведения
-// }, false);
-
-// document.addEventListener("click", function (e) {
-// 	console.log("document.click", e.target, e.currentTarget, this.dataset);
-// 	// e.stopPropagation(); // прекращение всплытия или погружения события
-// 	// e.preventDefault(); // отмена стандартного поведения
-// }, false);
-
-// container.addEventListener("click", function (e) {
-// 	console.log("container.click", e.target, e.currentTarget, this.dataset);
-// 	// e.stopPropagation(); // прекращение всплытия или погружения события
-// 	// e.preventDefault(); // отмена стандартного поведения
-// }, false);
-
-// section1.addEventListener("click", function (e) {
-// 	console.log("section1.click", e.target, e.currentTarget, this.dataset);
-// 	// e.stopPropagation(); // прекращение всплытия или погружения события
-// 	// e.preventDefault(); // отмена стандартного поведения
-// }, false);
+section3.addEventListener('scroll', function(e) {
+	e.preventDefault();
+	if (e.deltaY < -10) switchToSection2();
+});
 
 
-
-
-
+document.addEventListener("touchstart", function(e) { e.preventDefault() }, false);
+document.addEventListener("touchend", function(e) { e.preventDefault() }, false);
+document.addEventListener("touchcancel", function(e) { e.preventDefault() }, false);
+document.addEventListener("touchmove", function(e) { e.preventDefault() }, false);
