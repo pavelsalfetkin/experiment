@@ -62,7 +62,7 @@ var switch1 = function switch1(e) {
 
 // функция срабатывает на событие 'wheel' на секции 2
 var switch2 = function switch2(e) {
-	e.preventDefault();
+	// e.preventDefault();
 	// если < 0 то листаем сверху вниз
 	if (e.deltaY < -24) {
 		switchToSection1();
@@ -75,7 +75,7 @@ var switch2 = function switch2(e) {
 
 // функция срабатывает на событие 'wheel' на секции 3
 var switch3 = function switch3(e) {
-	e.preventDefault();
+	// e.preventDefault();
 	if (e.deltaY < -24) {
 		section2.removeEventListener('wheel', switch2, false);
 		switchToSection2();
@@ -102,7 +102,7 @@ function swipeFromSection1(e) {
 
 // реагируем на событие 'touchstart' на секции 2
 function swipeFromSection2(e) {
-	e.preventDefault();
+	// e.preventDefault();
 	this.startPoint = e.targetTouches[0].clientY;
 	this.endPoint;
 	// this.addEventListener('touchend', function() { e.preventDefault() });
@@ -118,7 +118,7 @@ function swipeFromSection2(e) {
 
 // реагируем на событие 'touchstart' на секции 3
 function swipeFromSection3(e) {
-	e.preventDefault();
+	// e.preventDefault();
 	this.startPoint = e.targetTouches[0].clientY;
 	this.endPoint;
 	// this.addEventListener('touchend', function() { e.preventDefault() });
@@ -138,7 +138,7 @@ function swipeFromSection3(e) {
 // отслеживаем листание на трекпаде или вращение колеса мыши на секциях
 section1.addEventListener('wheel', switch1, false);
 // это событие добавляется в функции - switchToSection2
-section2.addEventListener('wheel', switch2, false);
+// section2.addEventListener('wheel', switch2, false);
 section3.addEventListener('wheel', switch3, false);
 
 // отслеживаем начало touch события на секциях
