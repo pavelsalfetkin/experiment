@@ -145,3 +145,10 @@ section3.addEventListener('wheel', switch3, false);
 section1.addEventListener('touchstart', swipeFromSection1, false);
 section2.addEventListener('touchstart', swipeFromSection2, false);
 section3.addEventListener('touchstart', swipeFromSection3, false);
+
+window.addEventListener("load",function() {
+	setTimeout(function(){
+			// This hides the address bar:
+			window.scrollTo(0, 1);
+	}, 0);
+});
