@@ -49,7 +49,7 @@ var switchToSection3 = function switchToSection3() {
 // функция срабатывает на событие 'wheel' на секции 1
 var switch1 = function switch1(e) {
 	// отменяем стандартное поведение браузера на это событие
-	e.preventDefault();
+	// e.preventDefault();
 	// отслеживаем чтобы итераций листания было > 24 для избежания случайных листаний
 	// если > 0 то листаем снизу вверх
 	if (e.deltaY > 24) {
@@ -62,7 +62,7 @@ var switch1 = function switch1(e) {
 
 // функция срабатывает на событие 'wheel' на секции 2
 var switch2 = function switch2(e) {
-	e.preventDefault();
+	// e.preventDefault();
 	// если < 0 то листаем сверху вниз
 	if (e.deltaY < -24) {
 		switchToSection1();
@@ -75,7 +75,7 @@ var switch2 = function switch2(e) {
 
 // функция срабатывает на событие 'wheel' на секции 3
 var switch3 = function switch3(e) {
-	e.preventDefault();
+	// e.preventDefault();
 	if (e.deltaY < -24) {
 		section2.removeEventListener('wheel', switch2, false);
 		switchToSection2();
@@ -84,15 +84,15 @@ var switch3 = function switch3(e) {
 
 // реагируем на событие 'touchstart' на секции 1
 function swipeFromSection1(e) {
-	e.preventDefault();
+	// e.preventDefault();
 	// объявляем переменную и записываем координаты начала движения
 	this.startPoint = e.targetTouches[0].clientY;
 	// объявляем переменную конечных координат движения
 	this.endPoint;
-	this.addEventListener('touchend', function() { e.preventDefault() });
-	this.addEventListener('touchcancel', function() { e.preventDefault() });
+	// this.addEventListener('touchend', function() { e.preventDefault() });
+	// this.addEventListener('touchcancel', function() { e.preventDefault() });
 	this.addEventListener('touchmove', function (e) {
-		e.preventDefault();
+		// e.preventDefault();
 		// записываем координаты окончания движения
 		this.endPoint = e.targetTouches[0].clientY;
 		// если начальные координаты больше конечных - произошло движение снизу вверх
@@ -102,11 +102,11 @@ function swipeFromSection1(e) {
 
 // реагируем на событие 'touchstart' на секции 2
 function swipeFromSection2(e) {
-	e.preventDefault();
+	// e.preventDefault();
 	this.startPoint = e.targetTouches[0].clientY;
 	this.endPoint;
-	this.addEventListener('touchend', function() { e.preventDefault() });
-	this.addEventListener('touchcancel', function() { e.preventDefault() });
+	// this.addEventListener('touchend', function() { e.preventDefault() });
+	// this.addEventListener('touchcancel', function() { e.preventDefault() });
 	this.addEventListener('touchmove', function (e) {
 		this.endPoint = e.targetTouches[0].clientY;
 		// если начальные координаты больше конечных - произошло движение снизу вверх
@@ -118,11 +118,11 @@ function swipeFromSection2(e) {
 
 // реагируем на событие 'touchstart' на секции 3
 function swipeFromSection3(e) {
-	e.preventDefault();
+	// e.preventDefault();
 	this.startPoint = e.targetTouches[0].clientY;
 	this.endPoint;
-	this.addEventListener('touchend', function() { e.preventDefault() });
-	this.addEventListener('touchcancel', function() { e.preventDefault() });
+	// this.addEventListener('touchend', function() { e.preventDefault() });
+	// this.addEventListener('touchcancel', function() { e.preventDefault() });
 	this.addEventListener('touchmove', function (e) {
 		this.endPoint = e.targetTouches[0].clientY;
 		if (this.startPoint < this.endPoint) switchToSection2();
@@ -145,10 +145,3 @@ section3.addEventListener('wheel', switch3, false);
 section1.addEventListener('touchstart', swipeFromSection1, false);
 section2.addEventListener('touchstart', swipeFromSection2, false);
 section3.addEventListener('touchstart', swipeFromSection3, false);
-
-window.addEventListener("load",function() {
-	setTimeout(function(){
-			console.log("This hides the address bar");
-			window.scrollTo(0, 1);
-	}, 0);
-});
