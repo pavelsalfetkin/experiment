@@ -25,28 +25,25 @@ var switchToSection1 = function switchToSection1() {
 	container.style.transform = 'translate3d(0px, 0px, 0px)';
 	// плавный переход (property duration timing-function delay)
 	container.style.transition = 'all 600ms ease 0s';
-	window.scrollTo(0, 1);
 };
 
 // перемещаем контейнер с секциями на секцию 2
 var switchToSection2 = function switchToSection2() {
 	container.style.transform = 'translate3d(0px, -100%, 0px)';
 	container.style.transition = 'all 600ms ease 0s';
-	window.scrollTo(0, 1);
 	// добавляем событие которое отслеживает окончание анимации
-	// container.addEventListener("transitionend", function() {
-	// 	// когда мы переместили контейнер на секцию 2, добавляем событие 'wheel' которе отследит вращение колеса мыши или трекпада
-	// 	// эта конструкция частично не дает проскочить мимо секции 2 когда используется трекпад на ноутбуке
-	// 	// т.к. событие "листания" начинается на секции 1 и по инерции переходит на секцию 2 и пролистывает ее мимо
-	// 	section2.addEventListener('wheel', switch2, false);
-	// }, false);
+	container.addEventListener("transitionend", function() {
+		// когда мы переместили контейнер на секцию 2, добавляем событие 'wheel' которе отследит вращение колеса мыши или трекпада
+		// эта конструкция частично не дает проскочить мимо секции 2 когда используется трекпад на ноутбуке
+		// т.к. событие "листания" начинается на секции 1 и по инерции переходит на секцию 2 и пролистывает ее мимо
+		section2.addEventListener('wheel', switch2, false);
+	}, false);
 };
 
 // перемещаем контейнер с секциями на секцию 3
 var switchToSection3 = function switchToSection3() {
 	container.style.transform = 'translate3d(0px, -200%, 0px)';
 	container.style.transition = 'all 600ms ease 0s';
-	window.scrollTo(0, 1);
 };
 
 // функция срабатывает на событие 'wheel' на секции 1
@@ -141,17 +138,10 @@ function swipeFromSection3(e) {
 // отслеживаем листание на трекпаде или вращение колеса мыши на секциях
 section1.addEventListener('wheel', switch1, false);
 // это событие добавляется в функции - switchToSection2
-// section2.addEventListener('wheel', switch2, false);
+section2.addEventListener('wheel', switch2, false);
 section3.addEventListener('wheel', switch3, false);
 
 // отслеживаем начало touch события на секциях
 section1.addEventListener('touchstart', swipeFromSection1, false);
 section2.addEventListener('touchstart', swipeFromSection2, false);
 section3.addEventListener('touchstart', swipeFromSection3, false);
-
-window.addEventListener("load",function() {
-	setTimeout(function(){
-			// This hides the address bar:
-			window.scrollTo(0, 1);
-	}, 0);
-});
